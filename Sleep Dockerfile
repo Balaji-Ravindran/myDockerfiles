@@ -1,0 +1,11 @@
+FROM ubuntu
+
+CMD sleep 5
+
+or
+
+CMD command param1
+
+CMD ["command","param1"] CMD ["sleep","5"]
+
+FROM ubuntu
