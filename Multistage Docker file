@@ -1,0 +1,23 @@
+#Stage 0, "build stage", based on python, to build and compile the frontend
+FROM python as frontend-build
+
+RUN mkdir -p /opt/app
+
+WORKDIR /opt/app
+
+COPY . ./
+
+#Get the depencinces needed for building the application
+RUN <>
+
+#Building the application using RUN command
+RUN <>
+
+# Stage 1, based on nginx, to have only the complied app, ready for production with nginx
+FROM nginx
+
+COPY --from=frontend-build /opt/app/nginx.conf /etc/nginx/nginx.conf
+
+COPY --from=frontend-build /opt/app/build /usr/share/nginx/html
+
+EXPOSE 80
